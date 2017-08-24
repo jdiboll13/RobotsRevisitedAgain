@@ -18,12 +18,11 @@ namespace RobotsRevisitedAgain.Controllers
             var robotList = RobotServices.Builder();
             return View(robotList);
         }
-
-        public IActionResult Profile()
+        [Route("user/{Id}")]
+        public IActionResult UserID(int Id)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            var robotList = RobotServices.Builder();
+            return View(robotList[Id-1]);
         }
 
         public IActionResult Contact()

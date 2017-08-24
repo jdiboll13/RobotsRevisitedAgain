@@ -9,7 +9,7 @@
         <div class="col-xs-3">
             <h3>@item.Name</h3>
             <img src=@item.Avatar alt="Oops"/>
-            <h4><a href="#">@item.UserName</a></h4>
+            <h4><a href="/user/@item.Id">@item.UserName</a></h4>
             @if(@item.Job == null)
             {
                 <p style="color:red">Available for Hire!</p>
