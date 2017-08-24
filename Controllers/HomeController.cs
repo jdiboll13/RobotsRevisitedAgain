@@ -19,7 +19,7 @@ namespace RobotsRevisitedAgain.Controllers
             return View(robotList);
         }
 
-        public IActionResult About()
+        public IActionResult Profile()
         {
             ViewData["Message"] = "Your application description page.";
 

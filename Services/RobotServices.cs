@@ -10,14 +10,12 @@ namespace RobotsRevisitedAgain.Services
     {
         public static List<RobotModel> Builder()
         {
-            JsonSerializer serializer = new JsonSerializer();
-            var robotList = new List<RobotModel>();
             using (var reader = new StreamReader(System.IO.File.Open("robots.json", FileMode.Open)))
             {
-                var robotInfo = JsonConvert.DeserializeObject<RobotModel>(reader.ReadToEnd());
-                robotList.Add(robotInfo);
+                var robotInfo = JsonConvert.DeserializeObject<List<RobotModel>>(reader.ReadToEnd());
+                return robotInfo;
             }
-            return robotList;
+            
 
         }
     }
