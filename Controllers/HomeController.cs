@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RobotsRevisitedAgain.Models;
+using RobotsRevisitedAgain.Services;
 
 namespace RobotsRevisitedAgain.Controllers
 {
@@ -14,16 +15,8 @@ namespace RobotsRevisitedAgain.Controllers
     {
         public IActionResult Index()
         {
-            using (var reader = new StreamReader(System.IO.File.Open("robots.json", FileMode.Open)))
-            using (var jsonReader = new JsonTextReader(reader))
-            {
-                while (true)
-                {
-                    
-                }
-            }
-
-            return View();
+            var robotList = RobotServices.Builder();
+            return View(robotList);
         }
 
         public IActionResult About()
